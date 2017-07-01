@@ -1,4 +1,4 @@
-#! /usr/bin/env python2
+#! /usr/bin/env python3
 
 # find all possible permutations of a sequence of phone pad digits (other than 1 and 0)
 
@@ -34,4 +34,4 @@ def numToWords(num):
     return genAll(lettersets)[0]
 
 for num in numToWords("353346"):
-    print num
+    print(num)

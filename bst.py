@@ -1,4 +1,4 @@
-#! /usr/bin/env python2
+#! /usr/bin/env python3
 
 from random import randint
 from pprint import PrettyPrinter
@@ -18,7 +18,7 @@ class Branch:
         return "(%s) %s (%s)" % (repr(self.left), self.value, repr(self.right))
 
 def split(xs):
-    l = len(xs) / 2
+    l = int(len(xs) / 2)
     return (xs[0:l], xs[l], xs[l+1:])
 
 def bst(xs):
@@ -33,7 +33,6 @@ def makeBST(xs):
 def findBST(tree, x):
     if tree is None:
         return None
-    print tree.value
     if tree.value == x:
         return tree
     if x < tree.value:
@@ -43,6 +42,6 @@ def findBST(tree, x):
 
 test = [randint(1,50) for _ in range(20)]
 
-print test
-print "finding %s" % test[4]
-print findBST(makeBST(test), test[4])
+print(test)
+print("finding %s" % test[4])
+print(findBST(makeBST(test), test[4]))

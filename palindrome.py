@@ -1,4 +1,4 @@
-#! /usr/bin/env python2
+#! /usr/bin/env python3
 
 # check if a word is palindromic without reversing it
 
@@ -16,4 +16,4 @@ def isPalindrome(word):
         end -= 1
     return retval
 
-print isPalindrome("wwaabbaawwz")
+print(isPalindrome("wwaabbaawwz"))

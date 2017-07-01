@@ -1,4 +1,4 @@
-#! /usr/bin/env python2
+#! /usr/bin/env python3
 
 # counts the number of regions in a matrix
 # vertically and horizontally connected
@@ -56,4 +56,4 @@ for y, row in enumerate(testregion):
             count += 1
         exploreField(testregion, x, y)
 
-print count
+print(count)
