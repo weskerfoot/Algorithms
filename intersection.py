@@ -10,14 +10,14 @@ def frequencies(xs):
         freqs[x] += 1
     return freqs
 
-def intersection(fs1, fs2):
-    xs = []
-    for k, v in fs1.iteritems():
-        n = min(v, fs2[k])
-        xs.extend([k for _ in xrange(n)])
-    return xs
+def intersection(xs, ys):
+    freqs1 = frequencies(xs)
+    freqs2 = frequencies(ys)
 
-fs1 = frequencies([1,4,2,6,10,4,4])
-fs2 = frequencies([7,4,9,10,20,4,10])
+    intersection = []
+    for k, v in freqs1.iteritems():
+        n = min(v, freqs2[k])
+        intersection.extend([k for _ in xrange(n)])
+    return intersection
 
-print intersection(fs1, fs2)
+print intersection([1,4,2,6,10,4,4], [7,4,9,10,20,4,10])
