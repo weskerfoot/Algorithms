@@ -26,9 +26,6 @@ testregion = list(initialize([
         [True, True, False, True]
 ]))
 
-columns = len(testregion[0])
-rows = len(testregion)
-
 def exploreField(region, x, y):
 
     # check if we've reached the edge of the matrix
