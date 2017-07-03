@@ -1,8 +1,6 @@
 #! /usr/bin/env runghc
 
 import qualified Data.List as L
-import qualified Data.Function as F
-import Control.Monad
 
 {-
  - Construct a suffix tree of a given word
