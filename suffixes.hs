@@ -17,11 +17,13 @@ data Trie = TBranch {
 
 
 compress t@(TBranch root []) = t
-compress (TBranch root children)
-  | length children == 1 =
-      let compressed = (compress $ head children)
-        in TBranch (root++(getRoot compressed)) (getChildren compressed)
-  | otherwise = TBranch root (map compress children)
+compress (TBranch root (child:[])) =
+    let compressed = compress child
+      in TBranch
+            (root++(getRoot compressed))
+            (getChildren compressed)
+
+compress (TBranch root children) = TBranch root (map compress children)
 
 notEmpty [] = False
 notEmpty _ = True
