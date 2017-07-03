@@ -4,6 +4,11 @@ import qualified Data.List as L
 import qualified Data.Function as F
 import Control.Monad
 
+{-
+ - Construct a suffix tree of a given word
+ - See: http://www.geeksforgeeks.org/pattern-searching-set-8-suffix-tree-introduction/
+ -}
+
 data Trie = TBranch {
               getRoot :: String,
               getChildren :: [Trie]
@@ -14,7 +19,8 @@ data Trie = TBranch {
 compress t@(TBranch root []) = t
 compress (TBranch root children)
   | length children == 1 =
-      let compressed = (compress $ head children) in TBranch (root++(getRoot compressed)) (getChildren compressed)
+      let compressed = (compress $ head children)
+        in TBranch (root++(getRoot compressed)) (getChildren compressed)
   | otherwise = TBranch root (map compress children)
 
 notEmpty [] = False
