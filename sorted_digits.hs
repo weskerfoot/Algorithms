@@ -3,10 +3,10 @@ import Data.List
 digits :: Int -> [Int]
 digits n = unfoldr nextDigit n where
   nextDigit 0 = Nothing
-  nextDigit c = Just $ (c `mod` 10, c `div` 10)
+  nextDigit c = Just (c `mod` 10, c `div` 10)
 
 isSorted :: Int -> Bool
-isSorted n = (all (uncurry (<=)) ds') || (all (uncurry (>=)) ds'') 
+isSorted n = all (uncurry (<=)) ds' || all (uncurry (>=)) ds''
   where ds = digits n
         ds' = zip ds (maxBound : ds)
         ds'' = zip ds (minBound : ds)
